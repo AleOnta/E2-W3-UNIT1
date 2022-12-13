@@ -32,9 +32,17 @@ const arrayGenerator = () => {
 
 const requiredArray = arrayGenerator();
 console.log(requiredArray);
+
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
 */
+
+const arrayOrder = requiredArray.filter((even) => {
+  const evenArray = even % 2 === 0;
+  return evenArray;
+});
+
+console.log(arrayOrder);
 
 /* ESERCIZIO 4
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -43,6 +51,12 @@ console.log(requiredArray);
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
+
+const sumArray = requiredArray.reduce((accumulator, element) => {
+  return accumulator + element;
+});
+
+console.log(sumArray);
 
 /* ESERCIZIO 6
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
