@@ -17,10 +17,21 @@ const strconCatenator = (first2, last3) => {
 const strConcatenated = strconCatenator("Santo", "Parto");
 
 console.log(strConcatenated);
+
 /* ESERCIZIO 2
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
+const arrayGenerator = () => {
+  const newArray = [];
+  for (let i = 0; i < 11; i++) {
+    newArray.push(Math.floor(Math.random() * 100));
+  }
+  return newArray;
+};
+
+const requiredArray = arrayGenerator();
+console.log(requiredArray);
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
 */
