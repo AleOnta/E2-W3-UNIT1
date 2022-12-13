@@ -48,28 +48,90 @@ console.log(arrayOrder);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+const arrayExample = [15, 49, 75, 23, 14, 0, 58];
+
+function sumArray(array) {
+  let sum = 0;
+  array.forEach((item) => {
+    sum += item;
+  });
+
+  return sum;
+}
+
+const sum = sumArray(arrayExample);
+console.log(sum);
+
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
 
-const sumArray = requiredArray.reduce((accumulator, element) => {
+const sumArray2 = requiredArray.reduce((accumulator, element) => {
   return accumulator + element;
 });
 
-console.log(sumArray);
+console.log(sumArray2);
 
 /* ESERCIZIO 6
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+const arrayPlus = function (n) {
+  const arrayPlus = [];
+  for (let i = 0; i < arrayExample.length; i++) {
+    arrayPlus.push(arrayExample[i] + n);
+  }
+  return arrayPlus;
+};
+
+const arrayIncr = arrayPlus(5);
+console.log(arrayIncr);
 
 /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+const arrayExample2 = ["Monitor", "Scheda video", "Webcam", "Ventole", "Tastiera", "Mouse"];
+
+const arrayLength = arrayExample2.map((element) => {
+  let i = element.length;
+  return i;
+});
+console.log(arrayLength);
+
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+const oddIdentifier = function () {
+  const oddArray = [];
+  for (let i = 0; i < 100; i++) {
+    if (i % 2 !== 0) {
+      oddArray.push(i);
+    }
+  }
+  return oddArray;
+};
+
+const oddArray = oddIdentifier();
+console.log(oddArray);
+
+// OPPURE:
+
+const numberArray = [];
+
+for (let i = 0; i < 100; i++) {
+  numberArray.push(i);
+}
+
+const orderedArray = numberArray.filter((element) => {
+  const oddArray2 = element % 2 == !0;
+  return oddArray2;
+});
+
+oddArray2 = orderedArray;
+console.log(oddArray2);
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
