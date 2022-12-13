@@ -247,16 +247,14 @@ const movies = [
 /* ESERCIZIO 10
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-/*
-console.log("----------------------------------- EX 10 ---------------------------------------");
-const oldMovie = function () {
-  const oldestMovie = Math.min(parseInt(movies.Year));
-  return oldestMovie;
+
+const oldFilm = (array) => {
+  const oldestFilm = array.filter((element) => element.Year == Math.min(...movies.map((item) => item.Year)));
+  console.log(oldestFilm);
 };
 
-const oldestMovie = oldMovie();
-console.log(oldestMovie);
-*/
+oldFilm(movies);
+
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
@@ -311,10 +309,12 @@ console.log(recentMovies);
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 console.log("----------------------------------- EX 14---------------------------------------");
-/* ESERCIZIO 15
+
+const filmFinder =
+  /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-console.log("----------------------------------- EX 15 ---------------------------------------");
+  console.log("----------------------------------- EX 15 ---------------------------------------");
 
 const moviesCalculator = function () {
   const allYears = [];
