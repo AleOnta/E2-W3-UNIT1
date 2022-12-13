@@ -289,6 +289,24 @@ console.log(movieTitle);
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 console.log("----------------------------------- EX 13 ---------------------------------------");
+
+const movie2000 = function () {
+  const recentMovies = [];
+  for (let i = 0; i < movies.length; i++) {
+    switch (true) {
+      case movies[i].Year < 2000:
+        break;
+      case movies[i].Year >= 2000:
+        recentMovies.push(movies[i]);
+        break;
+    }
+  }
+  return recentMovies;
+};
+
+const recentMovies = movie2000();
+console.log(recentMovies);
+
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
@@ -297,3 +315,19 @@ console.log("----------------------------------- EX 14--------------------------
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 console.log("----------------------------------- EX 15 ---------------------------------------");
+
+const moviesCalculator = function () {
+  const allYears = [];
+  for (let i = 0; i < movies.length; i++) {
+    allYears.push(parseInt(movies[i].Year));
+  }
+  let sum2 = 0;
+  allYears.forEach((item) => {
+    sum2 += item;
+  });
+
+  return sum2;
+};
+
+const allMoviesYears = moviesCalculator();
+console.log(allMoviesYears);
