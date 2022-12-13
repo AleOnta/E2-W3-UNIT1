@@ -273,6 +273,18 @@ console.log(arrayMoviesLength);
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log("----------------------------------- EX 12 ---------------------------------------");
+
+const titleExtractor = function () {
+  const movieTitle = [];
+  for (let i = 0; i < movies.length; i++) {
+    movieTitle.push(movies[i].Title);
+  }
+  return movieTitle;
+};
+
+const movieTitle = titleExtractor();
+console.log(movieTitle);
+
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
