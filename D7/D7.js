@@ -302,7 +302,7 @@ const movie2000 = function () {
   return recentMovies;
 };
 
-const recentMovies = movie2000();
+const recentMovies = movie2000("tt2395427");
 console.log(recentMovies);
 
 /* ESERCIZIO 14
@@ -310,11 +310,23 @@ console.log(recentMovies);
 */
 console.log("----------------------------------- EX 14---------------------------------------");
 
-const filmFinder =
-  /* ESERCIZIO 15
+const filmFinder = (ID) => {
+  let filmYouAreSearchinFor = [];
+  movies.forEach((element) => {
+    if (element.imdbID === ID) {
+      filmYouAreSearchinFor = element;
+    }
+  });
+  return filmYouAreSearchinFor;
+};
+
+const yourFilm = filmFinder("tt0167261");
+console.log(yourFilm);
+
+/* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-  console.log("----------------------------------- EX 15 ---------------------------------------");
+console.log("----------------------------------- EX 15 ---------------------------------------");
 
 const moviesCalculator = function () {
   const allYears = [];
